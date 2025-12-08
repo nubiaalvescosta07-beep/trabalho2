@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - Refeitório</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="recovery-container">
+        <div class="recovery-form-area">
+            <div class="header-icon">
+                <i class="fas fa-lock-open icon-large"></i>
+            </div>
+            
+            <h2>Recuperar Senha</h2>
+            
+            <p class="description">
+                Insira seu e-mail acadêmico para receber um link com as instruções de redefinição de senha.
+            </p>
+
+            <form class="recovery-form">
+                <div class="input-group">
+                    <label for="recovery-email">E-mail acadêmico</label>
+                    <div class="input-field">
+                        <i class="far fa-envelope icon"></i>
+                        <input type="email" id="recovery-email" name="recovery-email" placeholder="seu.email@universidade.edu.br" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">Enviar Instruções</button>
+            </form>
+
+            <div class="separator"></div>
+
+            <p class="back-to-login">
+                Lembrou sua senha? <a href="index.html">*Voltar ao Login*</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

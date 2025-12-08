@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refeições - Sistema IFCE</title>
+    <link rel="stylesheet" href="css/refeicoes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="bg"></div>
+
+    <aside class="sidebar">
+        <div class="logo">IFCE Refeitório</div>
+
+        <nav>
+            <a href="dashboard.html" class="item">Início</a>
+            <a href="refeicoes.html" class="item active">Refeições</a>
+            <a href="cardapio.html" class="item">Cardápio da Semana</a>
+            <a href="administracao.html" class="item">Administração</a>
+            <a href="configuracoes.html" class="item">Configurações</a>
+        </nav>
+    </aside>
+
+    <main class="conteudo">
+
+        <header class="cabecalho">
+            <h1>Refeições</h1>
+
+            <div class="usuario">
+                <img src="imagens/user.png">
+                <div class="menu-usuario">
+                    <a href="#">Perfil</a>
+                    <a href="index.html">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Próxima Refeição</h3>
+                <p>Almoço - 12:00</p>
+            </div>
+
+            <div class="card">
+                <h3>Total de Refeições do Mês</h3>
+                <p>18</p>
+            </div>
+
+            <div class="card">
+                <h3>Reservas Pendentes</h3>
+                <p>2</p>
+            </div>
+
+        </div>
+
+        <section class="tabela">
+            <h2>Histórico de Refeições</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Status</th>
+                        <th>Comprovante</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>05/12/2025</td>
+                        <td>Almoço</td>
+                        <td>Servida</td>
+                        <td><button class="btn">Ver</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>04/12/2025</td>
+                        <td>Jantar</td>
+                        <td>Servida</td>
+                        <td><button class="btn">Ver</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>

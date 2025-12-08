@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - Sistema IFCE</title>
+
+    <link rel="stylesheet" href="css/configuracao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Fundo fosco padrão -->
+    <div class="bg"></div>
+
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+        <div class="logo">IFCE Refeitório</div>
+
+        <nav>
+            <a href="dashboard.html" class="item">Início</a>
+            <a href="refeicao.html" class="item">Refeições</a>
+            <a href="cardapio.html" class="item">Cardápio da Semana</a>
+            <a href="administracao.html" class="item">Administração</a>
+            <a href="configuracao.html" class="item active">Configurações</a>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="conteudo">
+
+        <header class="cabecalho">
+            <h1>Configurações</h1>
+
+            <!-- Usuário -->
+            <div class="usuario">
+                <img src="imagens/refeitorio.jpg">
+                <div class="menu-usuario">
+                    <a href="#">Perfil</a>
+                    <a href="index.html">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="cards">
+
+            <!-- Card 1 – Dados do Usuário -->
+            <div class="card">
+                <h2><i class="fa-solid fa-user"></i> Dados do Usuário</h2>
+
+                <label>Nome completo</label>
+                <input type="text" placeholder="Digite seu nome">
+
+                <label>E-mail acadêmico</label>
+                <input type="email" placeholder="email@ifce.edu.br">
+
+                <label>Alterar senha</label>
+                <input type="password" placeholder="****">
+            </div>
+
+            <!-- Card 2 – Preferências -->
+            <div class="card">
+                <h2><i class="fa-solid fa-gear"></i> Preferências</h2>
+
+                <label>Tema do sistema</label>
+                <select>
+                    <option>Padrão (Verde)</option>
+                    <option>Claro</option>
+                    <option>Escuro</option>
+                </select>
+
+                <label>Notificações</label>
+                <select>
+                    <option>Ativadas</option>
+                    <option>Desativadas</option>
+                </select>
+
+                <label>Idioma</label>
+                <select>
+                    <option>Português (BR)</option>
+                    <option>Inglês (EN)</option>
+                </select>
+            </div>
+
+        </section>
+
+        <button class="btn-salvar">Salvar alterações</button>
+
+    </main>
+
+</body>
+</html>

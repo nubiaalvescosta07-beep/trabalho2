@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagamento - Refeitório IFCE</title>
+<link rel="stylesheet" href="css/dashboard.css">
+
+<!-- Biblioteca QRCode.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+    /* Ajustes adicionais para QR Code e formulário */
+    #resultado-pix { margin-top: 15px; }
+    #qrcode { margin-top: 15px; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+    <main class="main">
+
+        <header class="header">
+            <h1 class="system-title">Pagamento PIX - Refeitório IFCE</h1>
+        </header>
+
+        <section class="cards">
+            <div class="card card-info" style="flex:1;">
+                <h3 id="titulo-refeicao">Refeição</h3>
+                <img id="img-refeicao" src="" alt="Prato" style="width:100%; border-radius:12px; margin:10px 0;">
+                <p id="desc-refeicao"></p>
+
+                <div class="input-group">
+                    <label for="pix">Informe sua chave PIX:</label>
+                    <input type="text" id="pix" placeholder="Digite sua chave PIX" style="width:100%; padding:8px; margin:8px 0; border-radius:8px; border:1px solid #ccc;">
+                </div>
+
+                <button class="btn-action" onclick="gerarPix()">Gerar PIX, Link e QR Code</button>
+
+                <div id="resultado-pix"></div>
+                <div id="qrcode"></div>
+            </div>
+        </section>
+
+        <a href="dashboard.html" class="btn-action" style="margin-top:20px; display:inline-block;">Voltar ao Dashboard</a>
+
+    </main>
+</div>
+
+<script>
+    // Cardápio da semana com imagens
+    const cardapio = {
+        segunda: {
+            almoco: { prato: "Arroz branco, Feijão tradicional, Frango grelhado", img: "imagens/segunda.jpg" },
+            jantar: { prato: "Macarronada caseira, Opção vegana: Macarrão alho e óleo", img: "imagens/segunda.jpg" }
+        },
+        terca: {
+            almoco: { prato: "Arroz integral, Feijão carioca, Bife acebolado", img: "imagens/terca.jpg" },
+            jantar: { prato: "Risoto simples, Opção vegana: Risoto de legumes", img: "imagens/terca.jpg" }
+        },
+        quarta: {
+            almoco: { prato: "Arroz branco, Feijão preto, Carne cozida", img: "imagens/quarta.jpg" },
+            jantar: { prato: "Cuscuz com ovo, Opção vegana: Cuscuz com legumes", img: "imagens/quarta.jpg" }
+        },
+        quinta: {
+            almoco: { prato: "Arroz branco, Feijão verde, Carne moída", img: "imagens/quinta.jpg" },
+            jantar: { prato: "Omelete, Opção vegana: Sopa de legumes", img: "imagens/quinta.jpg" }
+        },
+        sexta: {
+            almoco: { prato: "Arroz branco, Feijão carioca, Peixe assado", img: "imagens/sexta.jpg" },
+            jantar: { prato: "Sopa simples, Opção vegana: Sopa de legumes", img: "imagens/sexta.jpg" }
+        }
+    };
+
+    const dias = ["domingo","segunda","terca","quarta","quinta","sexta","sabado"];
+    const hoje = dias[new Date().getDay()];
+
+    // Ler parâmetro da URL para identificar refeição (almoco/jantar)
+    const urlParams = new URLSearchParams(window.location.search);
+    const refeicao = urlParams.get('refeicao') || 'almoco'; // padrão: almoco
+
+    if(cardapio[hoje]){
+        const info = cardapio[hoje][refeicao];
+        document.getElementById("titulo-refeicao").innerText = refeicao === 'almoco' ? "Almoço de Hoje" : "Jantar de Hoje";
+        document.getElementById("img-refeicao").src = info.img;
+        document.getElementById("desc-refeicao").innerText = info.prato;
+    }
+
+    function gerarPix(){
+        const pix = document.getElementById('pix').value.trim();
+        if(!pix){
+            alert('Informe sua chave PIX!');
+            return;
+        }
+
+        // link de pagamento
+        const linkPagamento = `https://meu-banco.com/pagar?chave=${encodeURIComponent(pix)}`;
+        document.getElementById('resultado-pix').innerHTML = `
+            <p><strong>Código PIX:</strong> ${pix}</p>
+            <p><strong>Link de Pagamento:</strong> <a href="${linkPagamento}" target="_blank">Clique aqui para pagar</a></p>
+        `;
+
+        // gera QR Code
+        document.getElementById('qrcode').innerHTML = ""; // limpa QR anterior
+        new QRCode(document.getElementById("qrcode"), {
+            text: pix,
+            width: 180,
+            height: 180
+        });
+    }
+</script>
+</body>
+</html>

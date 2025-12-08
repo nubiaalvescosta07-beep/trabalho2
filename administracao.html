@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Dashboard</title>
+
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS específico da administração -->
+    <link rel="stylesheet" href="css/administracao.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">Sistema IFCE</h2>
+        <nav>
+            <a href="dashboard.html" class="item"><i class="fas fa-home"></i> Início</a>
+            <a href="refeicao.html" class="item"><i class="fas fa-utensils"></i> Refeições</a>
+            <a href="cardapio.html" class="item"><i class="fas fa-calendar-alt"></i> Cardápio</a>
+            <a href="administracao.html" class="item active"><i class="fas fa-cogs"></i> Administração</a>
+            <a href="configuracao.html" class="item"><i class="fas fa-wrench"></i> Configurações</a>
+        </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- CABEÇALHO -->
+        <header class="header">
+            <h1>Administração</h1>
+            <div class="user-profile">
+                <img src="imagens/refeitorio.jpg" alt="Usuário">
+                <a href="index.html" class="logout">Sair</a>
+            </div>
+        </header>
+
+        <!-- CARDS DE AÇÕES -->
+        <section class="dashboard-actions">
+
+            <div class="card-action">
+                <i class="fas fa-users"></i>
+                <h3>Gerenciar Usuários</h3>
+                <p>Cadastrar, editar ou remover usuários do sistema.</p>
+                <a href="gerenciar-usuarios.html" class="btn-action">Acessar</a>
+            </div>
+
+            <div class="card-action">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Atualizar Cardápio</h3>
+                <p>Alterar o cardápio da semana, adicionar novos pratos e detalhes.</p>
+                <a href="atualizar-cardapio.html" class="btn-action">Acessar</a>
+            </div>
+
+            <div class="card-action">
+                <i class="fas fa-concierge-bell"></i>
+                <h3>Ver Reservas</h3>
+                <p>Consultar todas as reservas realizadas e status de pagamentos.</p>
+                <a href="ver-reservas.html" class="btn-action">Acessar</a>
+            </div>
+
+            <div class="card-action">
+                <i class="fas fa-bell"></i>
+                <h3>Notificações</h3>
+                <p>Visualizar alertas e avisos importantes.</p>
+                <a href="notificacoes.html" class="btn-action">Acessar</a>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

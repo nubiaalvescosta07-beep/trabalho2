@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - Refeitório IFCE</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body> 
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <i class="fas fa-utensils"></i>
+            <span>Refeitório</span>
+        </div>
+
+        <nav class="nav">
+            <a href="#" class="nav-item active"><i class="fas fa-home"></i> Início</a>
+            <a href="reservas.html" class="nav-item"><i class="fas fa-concierge-bell"></i> Reservas</a>
+            <a href="cardapio.html" class="nav-item"><i class="fas fa-calendar-week"></i> Cardápio da Semana</a>
+            <a href="administracao.html" class="nav-item"><i class="fas fa-user-cog"></i> Administração</a>
+            <a href="configuracao.html" class="nav-item"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <small>Versão 1.0</small>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1 class="system-title">Sistema de Gerenciamento do Refeitório</h1>
+            <div class="header-actions">
+                <div class="user">
+                    <img class="avatar" src="img/avatar-placeholder.png" alt="Avatar do usuário" />
+                    <span class="username">Núbia</span>
+                </div>
+                <a class="btn-logout" href="index.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </header>
+
+        <!-- CARDS INICIAIS -->
+        <section class="cards">
+            <div class="card card-info">
+                <h3>Informativo</h3>
+                <p>Atualize reservas, verifique lotação e notificações do refeitório.</p>
+            </div>
+
+            <div class="card card-next">
+                <h3>Próxima Refeição</h3>
+                <p class="big">Almoço — 12:00</p>
+                <small>Local: Bloco A - Refeitório</small>
+            </div>
+
+            <div class="card card-total">
+                <h3>Total de Refeições</h3>
+                <p class="big">3 hoje</p>
+                <small>Registradas para o seu RA</small>
+            </div>
+        </section>
+
+        <!-- PRATOS DO DIA -->
+        <section class="panel" style="margin-top:20px;">
+            <div class="panel-header">
+                <h2>Prato do Dia</h2>
+            </div>
+            <div class="panel-body pratos-dia">
+                <div class="prato-card">
+                    <h3>Almoço</h3>
+                    <img src="imagens/segunda.jpg" alt="Prato Almoço" />
+                    <p>Arroz, Feijão, Frango</p>
+                </div>
+                <div class="prato-card">
+                    <h3>Jantar</h3>
+                    <img src="imagens/terca.jpg" alt="Prato Jantar" />
+                    <p>carne ao molho</p>
+                </div>
+                <div class="prato-card">
+                    <h3>Pagamento</h3>
+                    <button class="btn-action" onclick="window.location.href='pagamento.html'">
+                        Pagar Agora
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESUMO DE RESERVAS -->
+        <section class="panel" style="margin-top:20px;">
+            <div class="panel-header">
+                <h2>Minhas Reservas</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="resumo-reservas">
+                    <li>Segunda: Almoço — Arroz, Feijão, Frango | Jantar — Macarronada</li>
+                    <li>Terça: Almoço — Arroz, Feijão, Carne Assada | Jantar — Risoto simples</li>
+                    <li>Quarta: Almoço — Arroz, Feijão, Peixe | Jantar — Cuscuz com ovo</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CARDÁPIO RESUMIDO -->
+        <section class="panel" style="margin-top:20px;">
+            <div class="panel-header">
+                <h2>Cardápio da Semana</h2>
+            </div>
+            <div class="panel-body">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th>Dia</th>
+                            <th>Tipo</th>
+                            <th>Prato Principal</th>
+                            <th>Horário</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Segunda</td>
+                            <td>Almoço</td>
+                            <td>Arroz, Feijão, Frango</td>
+                            <td>12:00</td>
+                        </tr>
+                        <tr>
+                            <td>Terça</td>
+                            <td>Almoço</td>
+                            <td>Arroz, Feijão, Carne Assada</td>
+                            <td>12:00</td>
+                        </tr>
+                        <tr>
+                            <td>Quarta</td>
+                            <td>Almoço</td>
+                            <td>Arroz, Feijão, Peixe</td>
+                            <td>12:00</td>
+                        </tr>
+                        <tr>
+                            <td>Quinta</td>
+                            <td>Almoço</td>
+                            <td>Arroz, Feijão, Carne Moída</td>
+                            <td>12:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sexta</td>
+                            <td>Almoço</td>
+                            <td>Arroz, Feijão, Peixe Assado</td>
+                            <td>12:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ADMINISTRAÇÃO -->
+        <section class="panel" style="margin-top:20px;">
+            <div class="panel-header">
+                <h2>Administração</h2>
+            </div>
+            <div class="panel-body">
+                <p>Gerenciar usuários, atualizar cardápio, verificar reservas e relatórios do refeitório.</p>
+                <button class="btn-action">Gerenciar Usuários</button>
+                <button class="btn-action">Atualizar Cardápio</button>
+                <button class="btn-action">Ver Reservas</button>
+            </div>
+        </section>
+
+        <!-- CONFIGURAÇÕES -->
+        <section class="panel" style="margin-top:20px;">
+            <div class="panel-header">
+                <h2>Configurações</h2>
+            </div>
+            <div class="panel-body">
+                <p>Ajustes do sistema, notificações, perfil do usuário e preferências.</p>
+                <button class="btn-action">Editar Perfil</button>
+                <button class="btn-action">Alterar Senha</button>
+                <button class="btn-action">Preferências</button>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+  // destaque do card "Próxima Refeição"
+  window.addEventListener('load', () => {
+    const next = document.querySelector('.card-next');
+    if (next) {
+      next.classList.add('pulse');
+      setTimeout(() => next.classList.remove('pulse'), 1500);
+    }
+  });
+</script>
+</body>
+</html>
+
