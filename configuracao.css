@@ -1,0 +1,174 @@
+/* Fundo fosco */
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../imagens/refeitorio.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(40%) blur(3px);
+    z-index: -1;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0, 70, 40, 0.92);
+    backdrop-filter: blur(5px);
+    padding-top: 20px;
+}
+
+.sidebar .logo {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.sidebar .item {
+    display: block;
+    padding: 15px 22px;
+    color: #e7e7e7;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.sidebar .item:hover {
+    background: rgba(255,255,255,0.12);
+    padding-left: 30px;
+}
+
+.sidebar .active {
+    background: rgba(255,255,255,0.25);
+    font-weight: 600;
+}
+
+/* Conteúdo */
+.conteudo {
+    margin-left: 250px;
+    padding: 35px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho h1 {
+    color: #0e582d;
+}
+
+.usuario img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu-usuario {
+    display: none;
+    position: absolute;
+    background: white;
+    right: 20px;
+    margin-top: 5px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.usuario:hover .menu-usuario {
+    display: block;
+}
+
+.menu-usuario a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #0e582d;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    flex: 1;
+    background: rgba(255,255,255,0.85);
+    border-radius: 14px;
+    padding: 25px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.22);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* Inputs */
+.card label {
+    font-size: 15px;
+    margin-top: 12px;
+    display: block;
+    font-weight: 600;
+    color: #0e582d;
+}
+
+.card input, .card select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255,255,255,0.7);
+    margin-top: 6px;
+    font-size: 15px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #0e582d;
+}
+
+/* Botão salvar */
+.btn-salvar {
+    margin-top: 28px;
+    padding: 14px 35px;
+    background: #0e582d;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.btn-salvar:hover {
+    background: #0a3d1f;
+    transform: scale(1.03);
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .cards {
+        flex-direction: column;
+    }
+}

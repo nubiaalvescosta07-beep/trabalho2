@@ -1,0 +1,119 @@
+/* Estilo geral da Dashboard com tema verde e fundo fosco */
+
+/* Fundo padrão com imagem fosca */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    background-image: url("../imagens/refeitorio.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    /* efeito fosco */
+    backdrop-filter: blur(4px);
+}
+
+/* Container principal */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* MENU LATERAL */
+.sidebar {
+    width: 260px;
+    background: rgba(0, 70, 32, 0.95);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.3);
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: rgb(3, 110, 51);
+}
+
+.logout-btn {
+    background: #ff4b4b;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #e04343;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    color: #fff;
+}
+
+.main-content h1 {
+    margin-bottom: 25px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #eaffea;
+}
+
+.card p {
+    margin: 0;
+    font-size: 15px;
+    color: #e7ffe7;
+}

@@ -1,0 +1,316 @@
+/* =====================
+   Variáveis de cores
+===================== */
+:root {
+    --verde-primario: #2E7D32;
+    --verde-claro: #66BB6A;
+    --verde-escuro: #1B5E20;
+    --cinza-claro: #F4F4F4;
+    --cinza-medio: #E0E0E0;
+    --texto: #333;
+    --gradiente-painel: linear-gradient(145deg, #ffffff, #e8f5e9);
+}
+
+/* =====================
+   Reset básico
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    color: var(--texto);
+    overflow-x: hidden;
+}
+
+/* =====================
+   Fundo animado e fosco
+===================== */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../imagens/refeitorio.jpg') no-repeat center center / cover;
+    filter: blur(6px) brightness(0.7);
+    z-index: -1;
+    animation: slowPan 60s infinite linear;
+}
+
+@keyframes slowPan {
+    0% { transform: scale(1) translateX(0); }
+    50% { transform: scale(1.05) translateX(20px); }
+    100% { transform: scale(1) translateX(0); }
+}
+
+/* =====================
+   Layout principal
+===================== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background: transparent;
+}
+
+/* =====================
+   Sidebar
+===================== */
+.sidebar {
+    width: 220px;
+    background-color: rgba(46,125,50,0.95);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(5px);
+    transition: width 0.3s;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.brand i {
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin: 5px 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-item i {
+    margin-right: 10px;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: var(--verde-claro);
+    transform: translateX(5px);
+}
+
+.sidebar-footer {
+    padding: 20px;
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--verde-escuro);
+    padding: 10px;
+    border-radius: 8px;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-logout i {
+    margin-right: 8px;
+}
+
+.btn-logout:hover {
+    background-color: var(--verde-claro);
+    transform: translateY(-2px);
+}
+
+/* =====================
+   Conteúdo principal
+===================== */
+.main {
+    flex: 1;
+    padding: 30px;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(3px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.system-title {
+    color: var(--verde-primario);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* =====================
+   Painel principal
+===================== */
+.panel {
+    background: var(--gradiente-painel);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeUp 0.7s ease forwards;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.panel h2 {
+    margin-bottom: 25px;
+    color: var(--verde-primario);
+    text-align: center;
+}
+
+/* =====================
+   Formulário com cards animados
+===================== */
+.reserva-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    animation: fadeUp 0.9s ease forwards;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.input-group:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* =====================
+   Selects com ícones (pseudo) e inputs
+===================== */
+.input-group select,
+.input-group input {
+    padding: 12px;
+    border: 1px solid var(--cinza-medio);
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+    border-color: var(--verde-primario);
+    box-shadow: 0 0 12px rgba(46,125,50,0.3);
+    outline: none;
+}
+
+/* =====================
+   Botão
+===================== */
+.btn-action {
+    grid-column: 1 / -1;
+    padding: 14px 25px;
+    background: var(--verde-primario);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-action:hover {
+    background: var(--verde-claro);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46,125,50,0.4);
+}
+
+/* =====================
+   Resultado PIX
+===================== */
+#resultado-pix {
+    margin-top: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    animation: fadeUp 1.1s ease forwards;
+}
+
+#resultado-pix a {
+    color: var(--verde-primario);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#resultado-pix a:hover {
+    color: var(--verde-claro);
+    text-decoration: underline;
+}
+
+/* =====================
+   Animações
+===================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   Responsividade
+===================== */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+    .main {
+        margin: 10px;
+        padding: 20px;
+    }
+    .reserva-form {
+        grid-template-columns: 1fr;
+    }
+}
