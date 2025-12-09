@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../imagens/refeitorio.jpg");
+    background-image: url("../trabalho2/refeitorio.jpg");
     background-size: cover;
     background-position: center;
     filter: brightness(40%) blur(3px);
